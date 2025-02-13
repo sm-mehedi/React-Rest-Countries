@@ -14,7 +14,8 @@ const Countries = () => {
       .then((data) => setCountries(data));
   }, []);
 
-  function Showdata({ name, population, flags, area }) {
+  function Showdata({ name, population, flags, area,cca3 }) {
+    const[visited,setVisited]=useState(false);
     return (
       <div
         style={{
@@ -55,6 +56,8 @@ const Countries = () => {
           Population: {population}
           <br></br>
           Area:{area}
+          <br></br>
+          Code:{cca3}
         </p>
 
         <img
@@ -67,6 +70,9 @@ const Countries = () => {
             boxShadow: "0 2px 4px rgba(0, 0, 0, 0.2)",
           }}
         />
+        <button onClick={()=>
+        setVisited(!visited)}>{visited?'Visited':'Going'}</button>
+        {visited && 'I have visited'}
       </div>
     );
   }

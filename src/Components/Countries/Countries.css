@@ -1,3 +1,6 @@
 .visited{
     background-color: chartreuse;
 }
+.unVisited{
+    background-color: crimson;
+}

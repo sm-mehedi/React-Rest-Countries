@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import './Countries.css'
 const Countries = () => {
   const [countries, setCountries] = useState([]);
   const ParentCss = {
@@ -17,13 +17,13 @@ const Countries = () => {
   function Showdata({ name, population, flags, area,cca3 }) {
     const[visited,setVisited]=useState(false);
     return (
-      <div
+      <div className={`${visited &&'visited'}`}
         style={{
           border: "1px solid #ddd",
           borderRadius: "8px",
           padding: "20px",
           margin: "20px",
-          backgroundColor: "#f9f9f9",
+ 
           boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
           display: "flex",
           flexDirection: "column",

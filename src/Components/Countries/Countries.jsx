@@ -16,8 +16,19 @@ const Countries = () => {
 
   function Showdata({ name, population, flags, area,cca3 }) {
     const[visited,setVisited]=useState(false);
+
+  
+
+
+
+
+
+
+
+
+
     return (
-      <div className={`${visited &&'visited'}`}
+      <div className={`${visited ?'visited':'unVisited'}`}
         style={{
           border: "1px solid #ddd",
           borderRadius: "8px",
@@ -34,11 +45,11 @@ const Countries = () => {
         onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
         onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
       >
-        <h3
+        <h3 
           style={{
             fontSize: "1.5rem",
             fontWeight: "600",
-            color: "#333",
+            color: visited?"#333123" : "#9222399",
             marginBottom: "10px",
           }}
         >
@@ -73,6 +84,7 @@ const Countries = () => {
         <button onClick={()=>
         setVisited(!visited)}>{visited?'Visited':'Going'}</button>
         {visited && 'I have visited'}
+        
       </div>
     );
   }
